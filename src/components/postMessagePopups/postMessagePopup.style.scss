@@ -1,0 +1,28 @@
+.post-message-popup{
+    position: fixed;
+    top: 20vh;
+    right:35vh;
+
+
+    width: 50vw;
+    // height: 50vh;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(10px 10px 10px gray);
+
+    padding: 20px 30px;
+    input{
+        width: 100%;
+    }
+    textarea{
+        width: 100%;
+    }
+    button{
+        border: none;
+        background: none;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        color: #fedc5e;
+        text-shadow: (2px 2px 2px #66592a);
+    } 
+}
