@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     messageList : [],
+    messageSeleted:{},
+
 }
 
 export const homepageSlice = createSlice({
@@ -11,6 +13,9 @@ export const homepageSlice = createSlice({
     reducers:{
         setMessageList: ( state, action ) => {
             state.messageList = action.payload
+        },
+        setMessageSeleted: ( state, action ) => {
+            state.messageSeleted = action.payload
         },
     }
 })
