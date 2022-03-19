@@ -32,7 +32,30 @@ export const postMessage = (body) => {
             let dataReturn = await response.json();
             await console.log( dataReturn )
             await dispatch(homepageAction.postMessageList(dataReturn))
+            await dispatch(homepageAction.setMessageSeleted(dataReturn))
             await dispatch(homepageAction.setPostPopUp())
+        }catch(error){
+            console.log(error)
+        }
+    }
+}
+
+export const editMessage = (body) => {
+    return async (dispatch) => {
+        // console.log(body)
+        try{
+            let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${body.id}`, {
+                method: "PUT",
+                body: JSON.stringify(body),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                },
+            });
+            let dataReturn = await response.json();
+            await console.log( dataReturn )
+            await dispatch(homepageAction.editMessage(dataReturn))
+            await dispatch(homepageAction.setMessageSeleted(dataReturn))
+            await dispatch(homepageAction.setEditToggle())
         }catch(error){
             console.log(error)
         }

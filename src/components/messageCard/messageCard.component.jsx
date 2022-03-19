@@ -1,18 +1,21 @@
 import React from "react";
 
+
+
 import { homepageAction } from "../../redux/homepage/homepage.slice";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./messageCard.style.scss";
 
 
 const MessageCard = (props) => {
   const dispatch = useDispatch();
-
+  const messageSeleted = useSelector((state) => state.homepage.messageSeleted);
+  
   const data = props.data;
   return (
     <div 
-      className="message-card"
+      className={`${messageSeleted.id == data.id ? "seleted message-card":"message-card"}`}
       onClick={()=>dispatch(homepageAction.setMessageSeleted(data))} >
       <div className="message-card-title">
         <svg
