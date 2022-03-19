@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 
 import { loadingCountryList } from "../../redux/universities/universities.asyncAction";
 
+import CountryListDropDown from "../../components/countrylistDropDown/countryListDropDown.component";
+
 import './universitiesPage.style.scss';
 
 const UniversitiesPage = () => {
@@ -14,7 +16,7 @@ const UniversitiesPage = () => {
 
     return(
         <div className="universities-page">
-        Universities page
+        <CountryListDropDown />
         </div>
     )
 }
