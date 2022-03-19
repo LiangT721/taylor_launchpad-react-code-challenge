@@ -61,3 +61,23 @@ export const editMessage = (body) => {
         }
     }
 }
+
+export const searchMessage = (id) => {
+    return async (dispatch) => {
+        try{
+            await dispatch(homepageAction.setMessageList([]))
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,
+            {
+                "method":'GET',
+                "content-type":"application/json"
+            })
+            const data = await response.json()
+            await console.log(data);
+            await dispatch(homepageAction.setMessageList([data]))
+            await dispatch(homepageAction.setMessageSeleted(data))
+        } catch (error) {
+            console.log(error)
+            alert('Loading failed')
+        }
+    }
+}

@@ -46,7 +46,6 @@ const MessageDetial = () => {
       userId: userId,
       id:id
     };
-    // console.log(body)
     dispatch(editMessage(body))
   };
 
@@ -54,7 +53,6 @@ const MessageDetial = () => {
     <div className="message-detail col-7">
       {messageSeleted.id != 0 && (
         <div className="">
-          <div>{editToggle.toString()}</div>
           {editToggle ? (
             <h3>
               <input
@@ -70,7 +68,8 @@ const MessageDetial = () => {
             <h3>{messageSeleted.title}</h3>
           )}
 
-          <h5>USER ID : {messageSeleted.userId}</h5>
+          <h6 className="d-flex justify-content-between mt-3 me-3"><span className="message-card-userId">USER ID : {messageSeleted.userId}</span>
+      <span className="message-card-id">MESSAGE ID : {messageSeleted.id}</span></h6>
           <hr />
           {editToggle ? (
             <p>

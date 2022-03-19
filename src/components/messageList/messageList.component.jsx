@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import MessageCard from "../messageCard/messageCard.component";
+import MessageSearchBar from "../messageSearchBar/messageSearchBar.component";
 
 import "./messageList.style.scss";
 
@@ -12,7 +13,7 @@ const MessageList = () => {
 
   return (
     <div className="message-list col-5">
-      <div className="search-bar">search bar</div>
+      <MessageSearchBar />
       <div className="message-list-display">
         {
             messageList && messageList.map( el => (

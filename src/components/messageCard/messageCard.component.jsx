@@ -34,7 +34,10 @@ const MessageCard = (props) => {
         </svg>
         {data.title}
       </div>
-      <div className="message-card-userId">User ID : {data.userId}</div>
+      <div className="message-card-Ids d-flex justify-content-between">
+      <span className="message-card-userId">User ID : {data.userId}</span>
+      <span className="message-card-id">message ID : {data.id}</span>
+      </div>
       <div className="message-card-content">{data.body}</div>
     </div>
   );
