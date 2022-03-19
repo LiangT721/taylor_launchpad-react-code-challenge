@@ -28,7 +28,8 @@ const MessageSearchBar = () => {
     <div className="message-search-bar mt-3 w-100 d-flex justify-content-between">
       <input className="w-75 me-3" type="text" placeholder="Please input the id of message" onChange={handleChange} />
       <button 
-      className="btn btn-primary"
+      className="button"
+      role="button"
       onClick={searchMessage_btn}
       >Search</button>
     </div>

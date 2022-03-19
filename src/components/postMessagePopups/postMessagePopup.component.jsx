@@ -29,8 +29,8 @@ const PostMessagePopup = () => {
   };
 
   const postMessage_btn = async () => {
-    let id = parseInt(userId)
-    if (typeof id != "number" || title.length < 1 || content.length < 1 ) {
+    let id = parseInt(userId);
+    if (typeof id != "number" || title.length < 1 || content.length < 1) {
       alert("User ID must be a number");
     } else {
       const body = {
@@ -57,7 +57,11 @@ const PostMessagePopup = () => {
         rows="4"
         onChange={handleChange}
       ></textarea>
-      <button onClick={postMessage_btn}> Send</button>
+      <div className="d-flex justify-content-end" >
+        <button className="button" role="button" onClick={postMessage_btn}>
+          Send
+        </button>
+      </div>
     </div>
   );
 };

@@ -36,6 +36,7 @@ export const postMessage = (body) => {
             await dispatch(homepageAction.setPostPopUp())
         }catch(error){
             console.log(error)
+            alert('Post failed')
         }
     }
 }
@@ -58,6 +59,7 @@ export const editMessage = (body) => {
             await dispatch(homepageAction.setEditToggle())
         }catch(error){
             console.log(error)
+            alert('Edit failed')
         }
     }
 }

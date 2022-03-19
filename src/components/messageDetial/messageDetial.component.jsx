@@ -2,7 +2,10 @@ import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { homepageAction } from "../../redux/homepage/homepage.slice";
-import { editMessage, deleteMessage } from "../../redux/homepage/homepage.asyncAction";
+import {
+  editMessage,
+  deleteMessage,
+} from "../../redux/homepage/homepage.asyncAction";
 
 import "./messageDetial.style.scss";
 
@@ -44,9 +47,9 @@ const MessageDetial = () => {
       title: title,
       body: content,
       userId: userId,
-      id:id
+      id: id,
     };
-    dispatch(editMessage(body))
+    dispatch(editMessage(body));
   };
 
   return (
@@ -68,8 +71,14 @@ const MessageDetial = () => {
             <h3>{messageSeleted.title}</h3>
           )}
 
-          <h6 className="d-flex justify-content-between mt-3 me-3"><span className="message-card-userId">USER ID : {messageSeleted.userId}</span>
-      <span className="message-card-id">MESSAGE ID : {messageSeleted.id}</span></h6>
+          <h6 className="d-flex justify-content-between mt-3 me-3">
+            <span className="message-card-userId">
+              USER ID : {messageSeleted.userId}
+            </span>
+            <span className="message-card-id">
+              MESSAGE ID : {messageSeleted.id}
+            </span>
+          </h6>
           <hr />
           {editToggle ? (
             <p>
@@ -88,19 +97,32 @@ const MessageDetial = () => {
           )}
           <div className="btns d-flex justify-content-end me-3 mt-5">
             {editToggle ? (
-              <button 
-              className="btn btn-primary me-3"
-              onClick={submitMessage}
-              >Submit</button>
+              <button
+                className="btn button me-3"
+                role="button"
+                onClick={submitMessage}
+              >
+                Submit
+              </button>
             ) : (
               ""
             )}
-            <button className="btn btn-primary me-3" onClick={editingMessage}>
+            <button
+              className="btn button me-3"
+              role="button"
+              onClick={editingMessage}
+            >
               EDIT
             </button>
-            <button 
-            className="btn btn-primary"
-            onClick={()=> {dispatch(deleteMessage(messageSeleted.id))}}>DELETE</button>
+            <button
+              className="btn button"
+              role="button"
+              onClick={() => {
+                dispatch(deleteMessage(messageSeleted.id));
+              }}
+            >
+              DELETE
+            </button>
           </div>
         </div>
       )}

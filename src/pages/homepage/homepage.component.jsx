@@ -24,7 +24,7 @@ const Homepage = () => {
       <MessageList />
       <MessageDetial />
       { postPopUp && (<PostMessagePopup />)}
-      <button className="post-btn btn btn-primary" onClick={()=>dispatch(homepageAction.setPostPopUp())}>POST NEW</button>
+      <button className="post-btn button" role='button' onClick={()=>dispatch(homepageAction.setPostPopUp())}>POST NEW</button>
 
     </div>
   );
