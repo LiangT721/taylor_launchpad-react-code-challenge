@@ -38,6 +38,10 @@ export const homepageSlice = createSlice({
         },
         setEditToggle: ( state ) => {
             state.editToggle = !state.editToggle;
+        },
+        deleteMessage: (state, action) => {
+            let newList = state.messageList.filter(el=>el.id != action.payload);
+            state.messageList = newList
         }
     }
 })

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { homepageAction } from "../../redux/homepage/homepage.slice";
-import { editMessage } from "../../redux/homepage/homepage.asyncAction";
+import { editMessage, deleteMessage } from "../../redux/homepage/homepage.asyncAction";
 
 import "./messageDetial.style.scss";
 
@@ -98,7 +98,9 @@ const MessageDetial = () => {
             <button className="btn btn-primary me-3" onClick={editingMessage}>
               EDIT
             </button>
-            <button className="btn btn-primary">DELETE</button>
+            <button 
+            className="btn btn-primary"
+            onClick={()=> {dispatch(deleteMessage(messageSeleted.id))}}>DELETE</button>
           </div>
         </div>
       )}

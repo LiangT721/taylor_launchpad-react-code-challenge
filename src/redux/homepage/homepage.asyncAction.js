@@ -81,3 +81,19 @@ export const searchMessage = (id) => {
         }
     }
 }
+
+export const deleteMessage = (id) => {
+    return async(dispatch) => {
+        console.log(id)
+        try{
+            let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+                method: "DELETE",
+              })
+            console.log(response)
+            dispatch(homepageAction.deleteMessage(id))
+            dispatch(homepageAction.setMessageSeleted({id:0}))
+        }catch(error){
+            alert("Delete failed")
+        }
+        
+    }}
