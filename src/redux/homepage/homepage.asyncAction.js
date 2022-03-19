@@ -3,7 +3,7 @@ import { homepageAction } from "./homepage.slice";
 export const loadMessageList = () => {
     return async (dispatch) => {
         try{
-            await dispatch(homepageAction.setMessageList([]))
+            dispatch(homepageAction.setMessageList([]))
             const response = await fetch("https://jsonplaceholder.typicode.com/posts? _start=0&_limit=20",
             {
                 "method":'GET',
