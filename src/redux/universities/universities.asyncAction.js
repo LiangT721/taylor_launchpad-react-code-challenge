@@ -34,7 +34,6 @@ export const loadingUniversityList = () => {
               },
             })
             const data = await response.json();
-            console.log(data)
             await dispatch(universitiesAction.setUniversityList(data))
 
         }catch(error){
