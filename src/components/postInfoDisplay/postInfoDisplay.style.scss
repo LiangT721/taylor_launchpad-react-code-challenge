@@ -1,8 +1,8 @@
 .post-info-area {
     width: 25rem;
     background-color: #fff;
-    border-radius: 10px;
-    filter: drop-shadow(2px 2px 2px rgba(128, 128, 128, 0.52));
+    border-radius: 3px;
+    filter: drop-shadow(1px 1px 1px rgba(128, 128, 128, 0.52));
   text-shadow: 2px 2px 2px #528b9957;
   overflow: hidden;
 }
@@ -13,13 +13,11 @@
 
 .post-info-country {
   color: rgb(240, 240, 240);
-  font-weight: bold;
   font-size: 1.2rem;
 }
 
 .post-info-code {
   color: rgb(230, 230, 230);
-  font-weight: bolder;
   font-size: 1rem;
 }
 
@@ -38,5 +36,5 @@
   color: rgb(2, 2, 24);
   font-weight: bold;
   font-size: 1.5rem;
-  text-shadow: 2px 2px 2px #528b9957;
+  text-shadow: 1px 1px 1px #528b9957;
 }

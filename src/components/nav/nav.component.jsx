@@ -19,7 +19,7 @@ const Nav = () => {
     },
   ];
   return (
-    <div className="nav col-1">
+    <div className="nav position-sticky top-0">
       {nav.map((el) => (
         <NavLink
           key={el.to}

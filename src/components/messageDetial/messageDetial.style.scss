@@ -1,19 +1,20 @@
-.message-detail{
-    margin-top: 20px;;
-    padding: 20px 40px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50vw;
-    p{
-        font-size: 1.2rem;
-    }
-    .edit-input{
-        width: 100%;
-    }
+.message-detail {
+  margin-top: 20px;
+  padding: 20px 40px;
+  left: 50%;
+  width: 45%;
+  background-color: white;
+  filter: drop-shadow(1px 1px 1px rgb(97, 126, 131));
+  
+  p {
+    font-size: 1.2rem;
+  }
+  .edit-input {
+    width: 100%;
+  }
 }
 
-.btns{
-    justify-content: end;
-    
+.btns {
+  transition: all 200ms ease-out;
+  justify-content: end;
 }

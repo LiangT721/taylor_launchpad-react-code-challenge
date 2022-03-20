@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { postMessage } from "../../redux/homepage/homepage.asyncAction";
+import { homepageAction } from '../../redux/homepage/homepage.slice';
 
 import "./postMessagePopup.style.scss";
 
 const PostMessagePopup = () => {
+  const postPopUp = useSelector(state => state.homepage.postPopUp)
   const [userId, setUserId] = useState("");
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
@@ -44,7 +47,7 @@ const PostMessagePopup = () => {
   };
 
   return (
-    <div className="post-message-popup">
+    <div className={`${postPopUp? "pop-up" :"" } post-message-popup`}>
       <p>title</p>
       <input type="text" name="title" id="" onChange={handleChange} />
       <p>user id</p>
@@ -58,9 +61,10 @@ const PostMessagePopup = () => {
         onChange={handleChange}
       ></textarea>
       <div className="d-flex justify-content-end" >
-        <button className="button" role="button" onClick={postMessage_btn}>
+        <button className="button me-3" role="button" onClick={postMessage_btn}>
           Send
         </button>
+        <button className="button" role='button' onClick={()=>dispatch(homepageAction.setPostPopUp(false))}>Cancel</button>
       </div>
     </div>
   );

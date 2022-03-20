@@ -1,3 +1,4 @@
+import { __esModule } from "@testing-library/jest-dom/dist/matchers";
 import React from "react";
 
 import { useSelector } from "react-redux";
@@ -9,17 +10,27 @@ import "./messageList.style.scss";
 
 const MessageList = () => {
     const messageList = useSelector( state => state.homepage.messageList)
+    const loadingStatus = useSelector (state => state.homepage.loadingStatus )
 
-
-  return (
-    <div className="message-list col-5">
-      <MessageSearchBar />
-      <div className="message-list-display">
+  
+  const messageListDiv = () => {
+    console.log(loadingStatus)
+    if (loadingStatus){
+          return <div className="loading-status p-3">{loadingStatus}</div>
+        }else
         {
-            messageList && messageList.map( el => (
+          console.log(messageList)
+          return messageList.map( el => (
                 <MessageCard key={el.id} data={el} />
             ))
         }
+  }
+
+  return (
+    <div className="message-list">
+      <MessageSearchBar />
+      <div className="message-list-display">
+        {messageListDiv()}
       </div>
     </div>
   );

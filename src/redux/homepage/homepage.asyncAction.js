@@ -10,8 +10,14 @@ export const loadMessageList = () => {
                 "content-type":"application/json"
             })
             const data = await response.json()
-            await console.log(data);
-            await dispatch(homepageAction.setMessageList(data))
+            if ( await data.length > 0 ){
+                dispatch(homepageAction.setLoadingStatus(null))
+                dispatch(homepageAction.setMessageList(data))
+                dispatch(homepageAction.setMessageSeleted({id:0}))
+
+            } else {
+                dispatch(homepageAction.setLoadingStatus("There is no message"))
+            }
         } catch (error) {
             console.log(error)
             alert('Loading failed')
@@ -74,9 +80,17 @@ export const searchMessage = (id) => {
                 "content-type":"application/json"
             })
             const data = await response.json()
-            await console.log(data);
-            await dispatch(homepageAction.setMessageList([data]))
-            await dispatch(homepageAction.setMessageSeleted(data))
+            console.log(data)
+            if ( await data.id ){
+                console.log('aa')
+                dispatch(homepageAction.setLoadingStatus(null))
+                dispatch(homepageAction.setMessageList([data]))
+                dispatch(homepageAction.setMessageSeleted(data))
+            } else {
+                console.log('bb')
+                dispatch(homepageAction.setLoadingStatus("There is no message"))
+                dispatch(homepageAction.setMessageSeleted({id:0}))
+            }
         } catch (error) {
             console.log(error)
             alert('Loading failed')

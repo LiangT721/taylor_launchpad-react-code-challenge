@@ -12,18 +12,21 @@ import "./homepage.style.scss";
 
 const Homepage = () => {
   const postPopUp = useSelector( state => state.homepage.postPopUp)
+  const messageSeleted = useSelector((state) => state.homepage.messageSeleted);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("loading default list");
+    dispatch(homepageAction.setLoadingStatus('Loading'))
     dispatch(loadMessageList());
   }, []);
 
   return (
-    <div className="homepage">
+    <div className="homepage position-relative">
+    {messageSeleted.id != 0 &&   
+    <MessageDetial />}
       <MessageList />
-      <MessageDetial />
-      { postPopUp && (<PostMessagePopup />)}
+      <PostMessagePopup />
       <button className="post-btn button" role='button' onClick={()=>dispatch(homepageAction.setPostPopUp())}>POST NEW</button>
 
     </div>

@@ -1,22 +1,13 @@
-.app {
-  position: relative;
+
+.pages{
+  width: 90%;
 }
 
-// <!-- HTML !-->
-// <button class="button" role="button">Button 17</button>
 
-// <!-- HTML !-->
-// <button class="button" role="button">Button 33</button>
-
-// /* CSS */
 .button {
   background-color: #8fd1e1;
-  border-radius: 10px;
-  box-shadow: rgba(44, 130, 187, 0.2) 0 -25px 18px -14px inset,
-    rgba(70, 44, 187, 0.15) 0 1px 2px, rgba(44, 111, 187, 0.144) 0 2px 4px,
-    rgba(44, 118, 187, 0.15) 0 4px 8px, rgba(44, 130, 187, 0.15) 0 8px 16px,
-    rgba(44, 123, 187, 0.15) 0 16px 32px;
-  color: rgb(250, 250, 250);
+  filter: drop-shadow(1px 1px 2px #2b5a66da);
+  color: rgb(241, 241, 241);
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
@@ -32,10 +23,7 @@
 }
 
 .button:hover {
-  box-shadow: rgba(44, 130, 187, 0.25) 0 -25px 18px -14px inset,
-    rgba(70, 44, 187, 0.25) 0 1px 2px, rgba(44, 111, 187, 0.25) 0 2px 4px,
-    rgba(44, 118, 187, 0.25) 0 4px 8px, rgba(44, 130, 187, 0.15) 0 8px 16px,
-    rgba(44, 123, 187, 0.15) 0 16px 32px;
+  filter: drop-shadow(2px 2px 4px #2b5a66da);
   color: rgb(250, 250, 250);
-  transform: scale(1.05) rotate(-1deg);
+  transform: scale(1.05) ;
 }

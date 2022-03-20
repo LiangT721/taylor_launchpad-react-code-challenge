@@ -21,6 +21,7 @@ const CountryListDropDown = () => {
         className="country-list-drop-down"
         onChange={e => {
           dispatch(universitiesAction.setCountrySelected(e.target.value))
+          dispatch(universitiesAction.setLoadingStatus('Loading...'))
           dispatch(loadingUniversityList())
         }}
      value={countrySeleted}

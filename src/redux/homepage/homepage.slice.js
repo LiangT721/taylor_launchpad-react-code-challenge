@@ -6,7 +6,7 @@ const initialState = {
     messageSeleted:{id:0},
     postPopUp:false,
     editToggle:false,
-
+    loadingStatus:null,
 }
 
 export const homepageSlice = createSlice({
@@ -42,6 +42,9 @@ export const homepageSlice = createSlice({
         deleteMessage: (state, action) => {
             let newList = state.messageList.filter(el=>el.id != action.payload);
             state.messageList = newList
+        },
+        setLoadingStatus: ( state, action ) => {
+            state.loadingStatus = action.payload
         }
     }
 })

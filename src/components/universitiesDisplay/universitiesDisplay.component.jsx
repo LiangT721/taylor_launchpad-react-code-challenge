@@ -10,14 +10,15 @@ const UniversitiesDisplay = () => {
   const universityList = useSelector(
     (state) => state.universities.universityList
   );
+  const loadingStatus = useSelector(state => state.universities.loadingStatus
+    )
   useEffect(() => {
     dispatch(loadingUniversityList());
   }, []);
 
   const uniList = () => {
-    if (universityList.length == 0) {
-      return <div className="no-data-display m-4 fs-3">Sorry, there is no university data in this country.
-      <br /> Please select other country.</div>;
+    if ( loadingStatus ) {
+      return <div className="no-data-display m-4 fs-3">{loadingStatus}</div>;
     } else {
       return universityList.map((el, index) => (
         <div className="university-card card position-relative" key={index}>
@@ -30,7 +31,7 @@ const UniversitiesDisplay = () => {
             </p>
             <div className="web h-50 position-absolute bottom-0 pt-1">
               {el.web_pages.map((page, index) => (
-                <a href="{page}" className="card-text mb-0" key={index}>
+                <a href={page} className="card-text mb-0" key={index}>
                   {page}
                 </a>
               ))}
@@ -42,7 +43,7 @@ const UniversitiesDisplay = () => {
   };
   return (
     <div className="universities-display">
-      <div className="university-list d-inline-flex flex-wrap justify-content-between mx-3 mt-3">
+      <div className="university-list d-inline-flex flex-wrap justify-content-between mx-3 mt-3 p-3">
         {uniList()}
       </div>
     </div>

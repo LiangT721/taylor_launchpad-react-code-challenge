@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     countryList : [],
     countrySeleted:"Canada",
-    universityList : []
+    universityList : [],
+    loadingStatus:null,
 }
 
 export const universitiesSlice = createSlice({
@@ -18,6 +19,9 @@ export const universitiesSlice = createSlice({
         },
         setUniversityList: ( state, action ) => {
             state.universityList = action.payload
+        },
+        setLoadingStatus: ( state, action ) => {
+            state.loadingStatus = action.payload
         }
     }
 })

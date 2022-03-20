@@ -34,10 +34,17 @@ export const loadingUniversityList = () => {
               },
             })
             const data = await response.json();
-            await dispatch(universitiesAction.setUniversityList(data))
-
+            console.log(data)
+            if ( await data.length > 0){
+                dispatch(universitiesAction.setUniversityList(data))
+                dispatch(universitiesAction.setLoadingStatus(null))
+            }
+            else{
+                dispatch(universitiesAction.setLoadingStatus("Sorry, there is no university data in this country. Please select other country."))
+            }
         }catch(error){
             console.log(error)
+            dispatch(universitiesAction.setLoadingStatus("The country input is invalid"))
         }
 
     }

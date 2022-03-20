@@ -1,16 +1,16 @@
 .post-message-popup{
     position: fixed;
-    top: 20vh;
+    top: -50vh;
     right:35vh;
 
-
+    transform: scale(0);
     width: 50vw;
-    // height: 50vh;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     filter: drop-shadow(10px 10px 10px gray);
 
     padding: 20px 30px;
+    transition: all 0.18s ease-in-out;
     input{
         width: 100%;
     }
@@ -18,12 +18,10 @@
         width: 100%;
         margin-bottom: 10px;
     }
-    // button{
-    //     border: none;
-    //     background: none;
-    //     font-weight: bolder;
-    //     font-size: 1.5rem;
-    //     color: #fedc5e;
-    //     text-shadow: (2px 2px 2px #66592a);
-    // } 
+
+    
+}
+.pop-up{
+    top: 20vh;
+    transform: scale(1);
 }

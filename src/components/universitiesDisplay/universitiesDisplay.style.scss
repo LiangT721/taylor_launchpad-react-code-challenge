@@ -12,10 +12,12 @@ a{
     width: 18rem;
     background-color: white;
     height: 10rem;
-    margin: 10px;
-    border-radius: 10px;
+    margin: 15px;
+    border-radius: 3px;
     display: inline-block;
     overflow: hidden;
+    filter: drop-shadow(1px 1px 1px rgba(128, 128, 128, 0.52));
+
 }
 .card-background {
     font-size: 15rem;
@@ -36,6 +38,9 @@ a{
 .card-text{
     color: white;
     font-size: 0.9rem;
+    &:hover{
+        color: #e4f3ef;
+    }
 }
 
 .card-title{

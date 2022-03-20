@@ -15,7 +15,7 @@ const MessageCard = (props) => {
   const data = props.data;
   return (
     <div 
-      className={`${messageSeleted.id == data.id ? "seleted message-card":"message-card"}`}
+      className={`${messageSeleted.id == data.id ? "seleted":""} message-card`}
       onClick={()=>dispatch(homepageAction.setMessageSeleted(data))} >
       <div className="message-card-title">
         <svg
