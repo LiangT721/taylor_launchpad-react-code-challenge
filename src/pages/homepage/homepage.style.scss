@@ -4,3 +4,26 @@
     bottom: 5vh;
     left: 80%;
 }
+.message-return{
+    transform: scale(0);
+    width: 30%;
+    position: fixed;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px gray;
+    transition: all 150ms ease-in-out;
+    top: 30vh;
+    left: 35%;
+    .message-return-text{
+        font-size: 1.2rem;
+        color: #528b99;
+        font-weight: bold;
+    }
+    button{
+        right: 1rem;
+        bottom:1rem
+    }
+}
+.appear{
+    transform: scale(1);
+}

@@ -11,7 +11,7 @@ import PostMessagePopup from "../../components/postMessagePopups/postMessagePopu
 import "./homepage.style.scss";
 
 const Homepage = () => {
-  const postPopUp = useSelector( state => state.homepage.postPopUp)
+  const messagePushReturn = useSelector( state => state.homepage.messagePushReturn)
   const messageSeleted = useSelector((state) => state.homepage.messageSeleted);
 
   const dispatch = useDispatch();
@@ -27,6 +27,11 @@ const Homepage = () => {
     <MessageDetial />}
       <MessageList />
       <PostMessagePopup />
+      <div className={`${messagePushReturn? "appear":""} message-return p-3`}>
+        <p className="message-return-text text-center p-5">{messagePushReturn}</p>
+        <button className="button position-absolute"
+          onClick={()=>dispatch(homepageAction.setMessagePushReturn(null))}>Comfirm</button>
+      </div>
       <button className="post-btn button" role='button' onClick={()=>dispatch(homepageAction.setPostPopUp())}>POST NEW</button>
 
     </div>

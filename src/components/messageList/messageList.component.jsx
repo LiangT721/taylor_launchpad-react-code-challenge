@@ -14,12 +14,10 @@ const MessageList = () => {
 
   
   const messageListDiv = () => {
-    console.log(loadingStatus)
     if (loadingStatus){
           return <div className="loading-status p-3">{loadingStatus}</div>
         }else
         {
-          console.log(messageList)
           return messageList.map( el => (
                 <MessageCard key={el.id} data={el} />
             ))

@@ -1,6 +1,6 @@
 .post-message-popup{
     position: fixed;
-    top: -50vh;
+    top: 20vh;
     right:35vh;
 
     transform: scale(0);
@@ -18,10 +18,15 @@
         width: 100%;
         margin-bottom: 10px;
     }
+    p{
+        text-transform: uppercase;
+        margin-bottom: 3px;
+        margin-top: 10px;
+    }
 
     
 }
 .pop-up{
-    top: 20vh;
+    // top: 20vh;
     transform: scale(1);
 }

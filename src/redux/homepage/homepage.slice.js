@@ -7,6 +7,7 @@ const initialState = {
     postPopUp:false,
     editToggle:false,
     loadingStatus:null,
+    messagePushReturn:null,
 }
 
 export const homepageSlice = createSlice({
@@ -45,6 +46,9 @@ export const homepageSlice = createSlice({
         },
         setLoadingStatus: ( state, action ) => {
             state.loadingStatus = action.payload
+        },
+        setMessagePushReturn: ( state, action ) => {
+            state.messagePushReturn = action.payload
         }
     }
 })
