@@ -23,7 +23,7 @@ const Homepage = () => {
 
   return (
     <div className="homepage position-relative">
-    {messageSeleted.id != 0 &&   
+    {messageSeleted.id !== 0 &&   
     <MessageDetial />}
       <MessageList />
       <PostMessagePopup />
@@ -32,7 +32,7 @@ const Homepage = () => {
         <button className="button position-absolute"
           onClick={()=>dispatch(homepageAction.setMessagePushReturn(null))}>Comfirm</button>
       </div>
-      <button className="post-btn button" role='button' onClick={()=>dispatch(homepageAction.setPostPopUp())}>POST NEW</button>
+      <button className="post-btn button"  onClick={()=>dispatch(homepageAction.setPostPopUp())}>POST NEW</button>
 
     </div>
   );

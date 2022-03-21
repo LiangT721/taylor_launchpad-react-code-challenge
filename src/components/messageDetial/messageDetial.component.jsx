@@ -97,7 +97,6 @@ const MessageDetial = () => {
           <div className="btns d-flex justify-content-end me-3 mt-5">
           <button
           className="btn button me-3"
-          role="button"
           onClick={editingMessage}
           >
           {`${editToggle? "Cancel" : "Edit"}`}
@@ -105,7 +104,6 @@ const MessageDetial = () => {
           {editToggle ? (
             <button
               className="btn button me-3"
-              role="button"
               onClick={submitMessage}
             >
               Submit
@@ -115,7 +113,6 @@ const MessageDetial = () => {
           )}
             <button
               className="btn button"
-              role="button"
               onClick={() => {
                 dispatch(deleteMessage(messageSeleted.id));
               }}

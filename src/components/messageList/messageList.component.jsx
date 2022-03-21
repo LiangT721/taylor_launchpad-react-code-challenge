@@ -1,4 +1,3 @@
-import { __esModule } from "@testing-library/jest-dom/dist/matchers";
 import React from "react";
 
 import { useSelector } from "react-redux";

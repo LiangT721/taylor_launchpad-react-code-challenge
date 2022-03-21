@@ -19,7 +19,7 @@ const MessageSearchBar = () => {
 
   const searchMessage_btn = () => {
     dispatch(homepageAction.setLoadingStatus("Loading"));
-    if (searchId == "") {
+    if (searchId === "") {
       dispatch(loadMessageList());
     } else {
       dispatch(searchMessage(searchId));
@@ -34,7 +34,7 @@ const MessageSearchBar = () => {
         placeholder="Please input the id of message"
         onChange={handleChange}
       />
-      <button className="button" role="button" onClick={searchMessage_btn}>
+      <button className="button" onClick={searchMessage_btn}>
         Search
       </button>
     </div>

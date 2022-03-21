@@ -38,7 +38,6 @@ const PostMessagePopup = () => {
   };
 
   const postMessage_btn = async () => {
-    console.log(userId.length)
     if (userId.length <1 || title.length < 1 || content.length < 1) {
       alert("User ID must be a number and title and content can not be empty");
     } else {
@@ -83,14 +82,12 @@ const PostMessagePopup = () => {
       <div className="d-flex justify-content-end">
         <button
           className="button me-3"
-          role="button"
           onClick={() => postMessage_btn()}
         >
           Send
         </button>
         <button
           className="button"
-          role="button"
           onClick={() => dispatch(homepageAction.setPostPopUp(false))}
         >
           Cancel

@@ -29,7 +29,7 @@ export const homepageSlice = createSlice({
         },
         editMessage: (state, action) => {
             let newlist = state.messageList.map((el => {
-                if(el.id == action.payload.id){
+                if(el.id === action.payload.id){
                     return action.payload;
                 }else{
                     return el
@@ -41,7 +41,7 @@ export const homepageSlice = createSlice({
             state.editToggle = !state.editToggle;
         },
         deleteMessage: (state, action) => {
-            let newList = state.messageList.filter(el=>el.id != action.payload);
+            let newList = state.messageList.filter(el=>el.id !== action.payload);
             state.messageList = newList
         },
         setLoadingStatus: ( state, action ) => {

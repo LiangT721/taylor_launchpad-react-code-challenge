@@ -36,6 +36,7 @@ export const postMessage = (body) => {
           "Content-type": "application/json; charset=UTF-8",
         },
       });
+      console.log(response)
       let dataReturn = await response.json();
       await dispatch(homepageAction.postMessageList(dataReturn));
       await dispatch(homepageAction.setMessageSeleted(dataReturn));
@@ -64,6 +65,7 @@ export const editMessage = (body) => {
           },
         }
       );
+      console.log(response)
       let dataReturn = await response.json();
       await dispatch(homepageAction.editMessage(dataReturn));
       await dispatch(homepageAction.setMessageSeleted(dataReturn));
@@ -107,7 +109,6 @@ export const searchMessage = (id) => {
 
 export const deleteMessage = (id) => {
   return async (dispatch) => {
-    console.log(id);
     try {
       let response = await fetch(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
@@ -115,6 +116,7 @@ export const deleteMessage = (id) => {
           method: "DELETE",
         }
       );
+      console.log(response)
       dispatch(homepageAction.deleteMessage(id));
       dispatch(homepageAction.setMessageSeleted({ id: 0 }));
       dispatch(
